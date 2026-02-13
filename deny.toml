@@ -13,7 +13,7 @@ ignore = [
     #  * alloy-provider to upgrade (https://github.com/alloy-rs/alloy/pull/3460)
     "RUSTSEC-2026-0002",
     # bytes integer overflow - upstream fix pending
-    "GHSA-434x-w66g-qw3r",
+    "RUSTSEC-2026-0007",
     # time DoS via stack exhaustion - upstream fix pending  
     "RUSTSEC-2026-0009",
 ]
