@@ -16,6 +16,10 @@ ignore = [
     "RUSTSEC-2026-0007",
     # time DoS via stack exhaustion - upstream fix pending  
     "RUSTSEC-2026-0009",
+    # rustls-webpki CRL matching bug - cannot upgrade past 0.103.4:
+    # rustls-webpki >=0.103.10 needs aws-lc-sys which requires cc >=1.2.26,
+    # but reth-mdbx-sys hard-pins cc =1.2.15. Blocked on upstream Reth/Matter Labs.
+    "RUSTSEC-2026-0049",
 ]
 
 [bans]

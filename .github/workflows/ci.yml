@@ -138,6 +138,12 @@ jobs:
         run: |
           # get latest tag (latest release)
           TAG=$(git tag -l 'v[0-9]*.[0-9]*.[0-9]*' --sort=-version:refname | head -n 1)
+          
+          # skip check if no tags exist (e.g., on initial repo setup)
+          if [ -z "$TAG" ]; then
+            echo "No matching tags found, skipping wire format check"
+            exit 0
+          fi
 
           # check that released wire format files that still exist are unchanged
           DIR=lib/storage_api/src/replay_wire_format
